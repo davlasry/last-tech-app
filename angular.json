@@ -8,6 +8,11 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "changeDetection": "OnPush"
         }
       },
       "root": "",
@@ -31,7 +36,6 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json",
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
@@ -101,8 +105,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            "scripts": []
           }
         },
         "server": {
@@ -150,6 +153,23 @@
             "routes": [
               "/"
             ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "last-tech-app:build:production",
+              "serverTarget": "last-tech-app:server:production"
+            },
+            "development": {
+              "browserTarget": "last-tech-app:build:development",
+              "serverTarget": "last-tech-app:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "route": "shell"
           },
           "configurations": {
             "production": {
