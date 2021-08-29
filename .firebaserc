@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "last-tech-e83bb": {
+      "hosting": {
+        "last-tech-app": [
+          "last-tech-e83bb"
+        ]
+      }
+    }
+  }
+}
